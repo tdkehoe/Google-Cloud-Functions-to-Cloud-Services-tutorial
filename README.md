@@ -38,7 +38,7 @@ You create new IAMs when you want to do stuff. For example, I wrote a Firebase C
 
 Because a service account does something you assign a role to a service account. In this case, my service account calls Google Cloud Translate so I assign it the role `Cloud Translation API User`.
 
-Because a service account does *only one thing* you assign a *limited role* to a service account. My translation service account doesn't get to do stuff in the Google Cloud Dataplex, for example. It also doesn't get to be a Cloud Translation API Editor or Admin. It's just a Cloud Translation API User.
+Because a service account does *only one thing* you assign a *limited role* to a service account. My translation service account doesn't get to do stuff in the Google Cloud Dataplex, for example. It also doesn't get to be a `Cloud Translation API Editor` or `Admin`. It's just a `Cloud Translation API User` minion.
 
 Make a Service Account
 ----------------------
