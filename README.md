@@ -58,7 +58,7 @@ On the right side click the pencil associated with your service account. Under `
 
 As I noted earlier, assign the lowest role that enables your function to work. In the case of my translation function, there are four choices: `Admin`, `Editor`, `User`, and `Reader`. The lowly `Reader` minions are only allowed to read policies and org descriptions. That won't work. `User` minions get to access the Google Cloud service. That's what I want my service account to do. `Editor` gets to edit policies and org descriptions and `Admin` has full access to policies and org descriptions. I don't want my service account to do that stuff.
 
-Back on your `IAM` page, you'll notice on the right that each IAM has a count of *excess permissions* (in blue). This might be a Admin role that is only asked to perform User level stuff. Clicking the blue triangle sometimes recommends that you do something to reduce excess permissions. To rephrase what I said earlier, the purpose of IAMs is to give each minion just enough authority to do its job, and no more.
+Back on your `IAM` page, you'll notice on the right that each IAM has a count of *excess permissions* (in blue). This might be an `Admin` role that is only asked to perform `User` level stuff. Clicking the blue triangle sometimes recommends that you do something to reduce excess permissions. To rephrase what I said earlier, the purpose of IAMs is to give each minion just enough authority to do its job, and no more.
 
 Hook Up Your Service Account to Your Cloud Function
 ------------------------------------------------------------
