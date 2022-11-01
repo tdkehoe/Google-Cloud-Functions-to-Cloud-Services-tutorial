@@ -113,11 +113,16 @@ Trigger your function and look at your logs and you should see your Firebase Clo
 
 You can't hook up an IAM service account with `gcloud functions deploy myAwesomeFunction` from Firebase Functions Emulator. The emulator doesn't compile code or something.
 
-What about hooking up a service account with
+What about hooking up a service account this way?
 
 ```js
 const translationClient = new TranslationServiceClient('my-awesome-function@my-awesome-app.iam.gserviceaccount.com');
 ```
 
-That doesn't work either. Not sure why.
+You'll get this error message:
 
+```
+Error: 7 PERMISSION_DENIED: Cloud Translation API has not been used in project 563584335869 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/translate.googleapis.com/overview?project=563584335869 then retry
+```
+
+Don't bother going to that URL, you'll get "permission denied." Notice the project ID: `563584335869`. This isn't your project ID. It's a default project ID Google uses when your Cloud Function isn't connected to a project. It appears that the Firebase Functions Emulator can't connect functions to projects.
