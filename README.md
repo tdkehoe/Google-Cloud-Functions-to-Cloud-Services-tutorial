@@ -108,3 +108,16 @@ Test Your Function
 ------------------
 
 Trigger your function and look at your logs and you should see your Firebase Cloud Function execute.
+
+## Use Firebase Functions Emulator
+
+You can't hook up an IAM service account with `gcloud functions deploy myAwesomeFunction` from Firebase Functions Emulator. The emulator doesn't compile code or something.
+
+What about hooking up a service account with
+
+```js
+const translationClient = new TranslationServiceClient('my-awesome-function@my-awesome-app.iam.gserviceaccount.com');
+```
+
+That doesn't work either. Not sure why.
+
