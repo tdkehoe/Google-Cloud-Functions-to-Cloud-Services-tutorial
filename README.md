@@ -86,15 +86,14 @@ Deploy Your Cloud Function
 *Don't* deploy your Firebase Cloud Function like this:
 
 ```
-firebase deploy --only functions:myAwesomeFunction --service-account my-awesome-function@my-awesome-project.iam.gserviceaccount.com
+firebase deploy --only functions:myAwesomeFunction --service-account my-service-account@my-awesome-project.iam.gserviceaccount.com
 
 ```
 
 The Firebase CLI doesn't know about service accounts. Instead deploy Firebase Cloud Function using `gcloud`:
 
 ```
-gcloud functions deploy myAwesomeFunction --service-account my-awesome-function@my-awesome-project.iam.gserviceaccount.com
-```
+gcloud functions deploy myAwesomeFunction --service-account my-service-account@my-awesome-project.iam.gserviceaccount.com
 
 I tried deploying without the service account:
 
